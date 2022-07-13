@@ -44,6 +44,10 @@ include('header.php');
                   <!-- todo text -->
                   <span class="text"><?php echo $c['movie_name'];?></span>
                   <!-- Emphasis label -->
+                  <div class="tools">
+                    
+                    <button class="fa fa-edit" onclick="edit(<?php echo $c['movie_id'];?>)"></button>
+                  </div>
                   
                   <!-- General tools such as edit or delete-->
                   <div class="tools">
@@ -73,6 +77,13 @@ function del(m)
         if (confirm("Are you sure you want to delete this movie") == true) 
         {
             window.location="process_delete_movie.php?mid="+m;
+        } 
+    }
+    function edit(m)
+    {
+        if (confirm("Are you sure you want to edit this movie?") == true) 
+        {
+            window.location="update_movie.php?mid="+m;
         } 
     }
     </script>
